@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-</head><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="conversion-tool">
@@ -72,73 +65,6 @@
             const outputValue = valueInMeters / toMeters[toUnit];
 
             document.getElementById("conversion-formula").textContent = inputValue + ' '+ fromUnit + ' = ' + outputValue.toFixed(4) + ' '+toUnit;
-            document.getElementById("output-value").textContent = outputValue.toFixed(4);
-        }
-
-        document.getElementById("convert-btn").addEventListener("click", convert);
-    </script>
-</body>
-</html>
-
-<body>
-    <div id="conversion-tool">
-        <form>
-            <label for="input-value">Value to Convert:</label>
-            <input type="number" id="input-value" min="0" placeholder="Enter a value">
-            <br>
-            <label for="from-unit">Convert From:</label>
-            <select id="from-unit">
-                <option value="cm">Centimeters</option>
-                <option value="m">Meters</option>
-                <option value="km">Kilometers</option>
-                <option value="inch">Inches</option>
-                <option value="feet">Feet</option>
-                <option value="yard">Yards</option>
-                <option value="miles">Miles</option>
-            </select>
-            <br>
-            <label for="to-unit">Convert To:</label>
-            <select id="to-unit">
-                <option value="cm">Centimeters</option>
-                <option value="m">Meters</option>
-                <option value="km">Kilometers</option>
-                <option value="inch">Inches</option>
-                <option value="feet">Feet</option>
-                <option value="yard">Yards</option>
-                <option value="miles">Miles</option>
-            </select>
-            <br>
-            <p id="conversion-formula"></p>
-            <button type="button" id="convert-btn">Convert</button>
-            <p id="output">Converted Value: <span id="output-value"></span></p>
-        </form>
-    </div>
-    <script>
-
-        const toMeters = {
-            cm: 0.01,
-            m: 1,
-            km: 1000,
-            inch: 0.0254,
-            feet: 0.3048,
-            yard: 0.9144,
-            miles: 1609.34,
-        };
-
-        function convert() {
-            const inputValue = parseFloat(document.getElementById("input-value").value);
-            const fromUnit = document.getElementById("from-unit").value;
-            const toUnit = document.getElementById("to-unit").value;
-
-            if (isNaN(inputValue) || inputValue < 0) {
-                document.getElementById("output-value").textContent = "Invalid Input";
-                return;
-            }
-
-            const valueInMeters = inputValue * toMeters[fromUnit];
-            const outputValue = valueInMeters / toMeters[toUnit];
-
-            document.getElementById("conversion-formula").textContent = '1 ' + fromUnit + ' = ' + toMeters[fromUnit].toFixed(4) + ' m';
             document.getElementById("output-value").textContent = outputValue.toFixed(4);
         }
 
